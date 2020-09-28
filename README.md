@@ -22,7 +22,7 @@
 [元リポジトリ](https://github.com/sakurai-lab-info/simple-js)をブラウザで開き、
 右上の`Fork`ボタンを押します。
 
-![元リポジトリのForkボタンの位置](./images/github-fork-from-simpel-js-01.png)
+![元リポジトリのForkボタンの位置](./images/github-fork-from-simpel-js-02.png)
 
 Forkが完了したら、元リポジトリと同じものがcloneされ、自分のアカウントのリポジトリとして追加されます。
 
