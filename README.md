@@ -22,13 +22,13 @@
 [元リポジトリ](https://github.com/sakurai-lab-info/simple-js)をブラウザで開き、
 右上の`Fork`ボタンを押します。
 
-![元リポジトリのForkボタンの位置](./images/github-fork-from-simpel-js-02.png)
+![元リポジトリのForkボタンの位置](./images/github-fork-from-simpel-js-01.png)
 
 Forkが完了したら、元リポジトリと同じものがcloneされ、自分のアカウントのリポジトリとして追加されます。
 
 そのリポジトリのHTTP URLをコピーしておきます。
 
-![元リポジトリのForkボタンの位置](./images/github-fork-from-simpel-js-01.png)
+![元リポジトリのForkボタンの位置](./images/github-fork-from-simpel-js-02.png)
 
 次に、[che-che.sakurai-lab.info](https://che-che.sakurai-lab.info)を開きます。
 画面下部の`Google`を押し、大学のメールアドレスとパスワードを入力してログインします。
