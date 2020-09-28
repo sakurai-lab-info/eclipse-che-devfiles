@@ -51,7 +51,7 @@ commands:
     component: nginx
     command: |
      if grep -q 'root /projects;$' /etc/nginx/conf.d/default.conf; then
-       sed -i 's|root /projects|root $(CHE_PROJECTS_ROOT)/simple-js|' /etc/nginx/conf.d/default.conf
+       sudo sed -i 's|root /projects|root $(CHE_PROJECTS_ROOT)/simple-js|' /etc/nginx/conf.d/default.conf
      else
        echo "DocumentRoot already configured!"
      fi
