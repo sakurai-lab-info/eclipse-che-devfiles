@@ -19,6 +19,8 @@ components:
     env:
       - name: NGINX_PORT
         value: '8080'
+    command: ['tail']
+    args: ['-f', '/dev/null']
 commands:
  -
   name: Start nginx Web Server
