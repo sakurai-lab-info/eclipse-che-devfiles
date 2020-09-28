@@ -2,9 +2,9 @@ apiVersion: 1.0.0
 metadata:
   generateName: simple-js-
 projects:
-  - name: php-web-simple
+  - name: simple-js
     source:
-      location: 'https://github.com/sakurai-lab-info/simple-js.git'
+      location: '@@YOUR-REPOSITORY-URL@@'
       type: git
       branch: master
 components:
@@ -19,3 +19,38 @@ components:
     env:
       - name: NGINX_PORT
         value: '8080'
+commands:
+ -
+  name: Start nginx Web Server
+  actions:
+   -
+    type: exec
+    component: nginx
+    command: sudo service nginx start
+ -
+  name: Stop nginx Web Server
+  actions:
+   -
+    type: exec
+    component: nginx
+    command: sudo service nginx stop
+ -
+  name: Restart nginx Web Server
+  actions:
+   -
+    type: exec
+    component: nginx
+    command: sudo service nginx restart
+ -
+  name: Configure nginx Web Server DocumentRoot
+  actions:
+   -
+    type: exec
+    component: nginx
+    command: |
+     if grep -q 'root /projects;$' /etc/nginx/conf.d/default.conf; then
+       sed -i 's|root /projects|root $(CHE_PROJECTS_ROOT)/simple-js|' /etc/nginx/conf.d/default.conf
+     else
+       echo "DocumentRoot already configured!"
+     fi
+
