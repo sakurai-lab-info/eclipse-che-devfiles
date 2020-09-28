@@ -1,0 +1,21 @@
+apiVersion: 1.0.0
+metadata:
+  generateName: simple-js-
+projects:
+  - name: php-web-simple
+    source:
+      location: 'https://github.com/sakurai-lab-info/simple-js.git'
+      type: git
+      branch: master
+components:
+  - alias: nginx
+    type: dockerimage
+    image: 'sakuraiyuta/nginx-static:latest'
+    mountSources: true
+    memoryLimit: 256Mi
+    endpoints:
+      - name: 8080-tcp
+        port: 8080
+    env:
+      - name: NGINX_PORT
+        value: '8080'
