@@ -1,0 +1,20 @@
+metadata:
+  generateName: python-text-
+components:
+  - id: ms-python/python/latest
+    memoryLimit: 512Mi
+    type: chePlugin
+  - mountSources: true
+    memoryLimit: 512Mi
+    type: dockerimage
+    alias: python
+    image: 'sakuraiyuta/python-allinone:latest'
+apiVersion: 1.0.0
+commands:
+  - name: CLI
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}'
+        type: exec
+        command: python
+        component: python
+
