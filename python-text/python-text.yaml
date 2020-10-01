@@ -9,6 +9,8 @@ components:
     type: dockerimage
     alias: python
     image: 'sakuraiyuta/python-allinone:latest'
+  - id: eamodio/vscode-gitlens/latest
+    type: chePlugin
 apiVersion: 1.0.0
 commands:
   - name: CLI
@@ -17,4 +19,3 @@ commands:
         type: exec
         command: python
         component: python
-

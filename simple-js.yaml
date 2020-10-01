@@ -21,6 +21,8 @@ components:
         value: '8080'
     command: ['tail']
     args: ['-f', '/dev/null']
+  - id: eamodio/vscode-gitlens/latest
+    type: chePlugin
 commands:
  -
   name: Start nginx Web Server
