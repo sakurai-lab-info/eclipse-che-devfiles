@@ -1,0 +1,34 @@
+metadata:
+  generateName: php-mysql-
+components:
+  - id: redhat/php/latest
+    memoryLimit: 1Gi
+    type: chePlugin
+  - id: redhat/php-debugger/latest
+    memoryLimit: 256Mi
+    type: chePlugin
+  - mountSources: true
+    endpoints:
+      - name: 8080-tcp
+        port: 8080
+    memoryLimit: 512Mi
+    type: dockerimage
+    volumes:
+      - name: composer
+        containerPath: /home/user/.composer
+    alias: server
+    image: 'sakuraiyuta/php-mysql:latest'
+apiVersion: 1.0.0
+commands:
+  - name: Start Web/DB server
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}'
+        type: exec
+        command: sudo service php7.4-fpm start && sudo service nginx start && sudo service mysql start
+        component: server
+  - name: Stop Web/DB server
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}'
+        type: exec
+        command: sudo service php7.4-fpm stop && sudo service nginx stop && sudo service mysql stop
+        component: server
