@@ -1,7 +1,7 @@
 metadata:
   generateName: python-text-
 components:
-  - id: ms-python/python/latest
+  - id: sakuraiyuta/che-python/latest
     memoryLimit: 512Mi
     type: chePlugin
   - mountSources: true
